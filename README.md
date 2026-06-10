@@ -21,3 +21,4 @@ Best services:
 
 Data used in this project:
 https://www.kaggle.com/datasets/shrutimechlearn/churn-modelling?resource=download
+currently building @14:12
