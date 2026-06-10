@@ -17,3 +17,7 @@ Best services:
 -Subscription based companies
 -Telecommunication and internet provider
 -Banking and financial service provider
+
+
+Data used in this project:
+https://www.kaggle.com/datasets/shrutimechlearn/churn-modelling?resource=download
