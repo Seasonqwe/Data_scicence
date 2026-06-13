@@ -22,3 +22,111 @@ Best services:
 Data used in this project:
 https://www.kaggle.com/datasets/shrutimechlearn/churn-modelling?resource=download
 currently building @14:12
+
+
+## 📋 Project Overview
+
+This project aims to predict whether a bank customer will **churn** (leave the bank) using machine learning. Customer churn prediction helps banks identify at-risk customers and take proactive retention measures.
+
+The model is built on the **Churn_Modelling** dataset and includes data exploration, feature engineering, multiple ML models, and performance comparison.
+
+---
+
+## 📊 Dataset
+
+- **Dataset Name**: Churn_Modelling.csv
+- **Rows**: 10,000
+- **Target Variable**: `Exited` (1 = Customer churned, 0 = Stayed)
+- **Key Features**:
+  - CreditScore, Age, Tenure, Balance, NumOfProducts
+  - HasCrCard, IsActiveMember, EstimatedSalary
+  - Geography (France, Spain, Germany), Gender
+
+---
+
+## 🔧 Feature Engineering
+
+The following new features were created to improve model performance:
+
+- `BalanceZero` — Binary flag if balance is zero
+- `BalanceToSalaryRatio` — Balance divided by Estimated Salary
+- `ProductUsage` — Interaction between `NumOfProducts` and `IsActiveMember`
+- `Male_Germany`, `Male_Spain` — Interaction features
+- `AgeGroup` & `TenureGroup` — Binned categorical features
+
+---
+
+## 📈 Models Evaluated
+
+| Model                        | Accuracy | Precision (Churn) | Recall (Churn) | F1-Score (Churn) |
+|-----------------------------|----------|-------------------|----------------|------------------|
+| **Random Forest**           | **0.8695** | 0.76              | 0.49           | 0.59             |
+| **Gradient Boosting**       | 0.8675   | 0.75              | 0.49           | 0.59             |
+| **K-Nearest Neighbors**     | 0.8300   | -                 | -              | -                |
+| **Logistic Regression**     | 0.8110   | 0.55              | 0.20           | 0.29             |
+| **Support Vector Machine**  | 0.8035   | -                 | -              | -                |
+
+### Best Model: **Random Forest Classifier**
+
+**Why Random Forest?**
+- Highest accuracy (86.95%)
+- Good balance of precision and recall
+- Robust and interpretable (feature importance available)
+- Handles imbalanced data relatively well
+
+---
+
+## 🛠 Technologies Used
+
+- Python 3
+- Pandas, NumPy
+- Matplotlib, Seaborn
+- Scikit-learn (all models + preprocessing)
+- Jupyter Notebook
+
+---
+
+## 🚀 How to Run the Project
+
+### 1. Clone or Download the Project
+
+### 2. Install Dependencies
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+3. Run the Notebook
+Open projecttest.ipynb in Jupyter Notebook or Jupyter Lab:
+Bashjupyter notebook
+4. Key Steps in the Notebook
+
+Load and explore data
+Data cleaning & preprocessing
+Feature engineering
+Train multiple models
+Evaluate and compare performance
+Feature importance analysis
+
+
+📊 Key Insights
+
+Customers with low product usage and zero balance are more likely to churn.
+Age and Geography play significant roles.
+Tree-based models (Random Forest & Gradient Boosting) significantly outperform linear models.
+The churn class is imbalanced — recall for churners is the main area for improvement.
+
+
+🔮 Future Improvements
+
+Handle class imbalance using SMOTE or class weights
+Hyperparameter tuning with GridSearchCV / Optuna
+Try advanced models (XGBoost, LightGBM, CatBoost)
+Deploy model using Flask / FastAPI or Streamlit
+Add SHAP values for better interpretability
+Customer segmentation + personalized retention strategies
+
+
+📄 License
+This project is for educational and portfolio purposes.
+
+👤 Author
+Built as part of a Machine Learning project.
